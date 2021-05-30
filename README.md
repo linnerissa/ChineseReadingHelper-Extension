@@ -6,7 +6,7 @@ This was mostly meant to be a learning exploration into:
 * Chrome extensions and how they work/are set up (I found this youtube video useful: https://www.youtube.com/watch?v=Ipa58NVGs_c)
 * How to inject react into a webpage through a chrome extension (This tutorial was extremely helpful: https://itnext.io/create-chrome-extension-with-reactjs-using-inject-page-strategy-137650de1f39) 
 
-The injected elements were mostly explored in the sister repo: https://github.com/linnerissa/LanguageSubtitles where I tried to learn how to setup an express server and react webpage.
+The injected elements were mostly explored in the sister repo: https://github.com/linnerissa/ChineseReadingHelper where I tried to learn how to setup an express server and react webpage.
 
 ## TO DO: 
 Here's a list of things I could do as improvement (but I might not; depends on if theres much more interest in learning this here)
