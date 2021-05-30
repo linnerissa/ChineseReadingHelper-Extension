@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# Chrome Extension: XinHuaNet Reading Helper
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+When learning to read chinese, having natural language segmentation can help a reader better understand the language phrasing. This extension overwrites the main article body of some XinHuaNet Article to provide the segmentation, pronunciation, and translation of these phrases on demand. This can help a reader more easily get a feel for the language choices and building blocks used in written language. 
 
-## Available Scripts
+This was mostly meant to be a learning exploration into:
+* Chrome extensions and how they work/are set up (I found this youtube video useful: https://www.youtube.com/watch?v=Ipa58NVGs_c)
+* How to inject react into a webpage through a chrome extension (This tutorial was extremely helpful: https://itnext.io/create-chrome-extension-with-reactjs-using-inject-page-strategy-137650de1f39) 
 
-In the project directory, you can run:
+The injected elements were mostly explored in the sister repo: https://github.com/linnerissa/LanguageSubtitles where I tried to learn how to setup an express server and react webpage.
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## TO DO: 
+Here's a list of things I could do as improvement (but I might not; depends on if theres much more interest in learning this here)
+* Cleanup the unused files and better name related things. It's not immediately evident why Content.JS actually has most of the code for the inject react for example and that the app.js is responsible for the actual extension. 
+* Move all the local server fetches over to the deployed app. This means the extension can actually be standalone without having to locally run the server.
+* Figure out how to make the extension popup persist since it seems to lose state
+* Rework whether the toggle is meant to be for all the pages or per page (in which case it should be a button). The actual content.js code probably supports button a little better.
+* Visually - everything looks kind of awful...
