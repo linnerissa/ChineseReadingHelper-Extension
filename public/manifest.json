@@ -5,6 +5,9 @@
   "browser_action": {
     "default_popup": "index.html"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
   "content_scripts": [
     {
@@ -16,8 +19,7 @@
       "js": [
         "/static/js/content.js",
         "/static/js/app.js"
-      ],
-      "run_at": "document_end"
+      ]
     }
   ]
 }

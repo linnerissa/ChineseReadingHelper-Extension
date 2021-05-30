@@ -1,3 +1,4 @@
+/*global chrome*/
 import React from "react";
 import ReactDOM from "react-dom";
 import "./content.css";
@@ -105,19 +106,30 @@ async function callBackendAPI() {
   return body;
 }
 
-// const app = document.createElement("div");
-// app.id = "my-extension-root";
-// document.body.appendChild(app);
-let article = document.getElementsByClassName("main-left");
-if (article.length === 0) {
-  article = document.getElementsByClassName("main-aticle");
-}
+chrome.storage.onChanged.addListener(function (changes, namespace) {
+  for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
+    if (key !== "replaceArticle") {
+      continue;
+    }
+    console.log("Extension state is: " + newValue);
 
-callBackendAPI().then((body) => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <Main body={body} />
-    </React.StrictMode>,
-    article[0]
-  );
+    if (!newValue) {
+      window.location.reload();
+      return;
+    }
+
+    let article = document.getElementsByClassName("main-left");
+    if (article.length === 0) {
+      article = document.getElementsByClassName("main-aticle");
+    }
+
+    callBackendAPI().then((body) => {
+      ReactDOM.render(
+        <React.StrictMode>
+          <Main body={body} />
+        </React.StrictMode>,
+        article[0]
+      );
+    });
+  }
 });
