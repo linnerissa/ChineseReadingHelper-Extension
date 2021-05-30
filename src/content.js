@@ -108,11 +108,16 @@ async function callBackendAPI() {
 // const app = document.createElement("div");
 // app.id = "my-extension-root";
 // document.body.appendChild(app);
+let article = document.getElementsByClassName("main-left");
+if (article.length === 0) {
+  article = document.getElementsByClassName("main-aticle");
+}
+
 callBackendAPI().then((body) => {
   ReactDOM.render(
     <React.StrictMode>
       <Main body={body} />
     </React.StrictMode>,
-    document.getElementsByClassName("main-left")[0]
+    article[0]
   );
 });
